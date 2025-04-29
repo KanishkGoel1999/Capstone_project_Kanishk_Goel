@@ -66,8 +66,15 @@ _(Note: You might need to set up CUDA-specific versions of `torch`, `torch_geome
 Download the dataset before training. This script downloads both datasets, please refer comments in the train and test files on  which one to use:
 
 ```bash
-cd ~ 
+cd ~
+
+# For dataset 1
 gdown 'https://drive.google.com/uc?id=1urh1EIvkGmhErqhCXW_MtKfft_JOwfIA' -O Dataset1.zip
+unzip Dataset1
+
+# For dataset 2
+kaggle datasets download ismetsemedov/transactions
+unzip transactions
 ```
 
 ---
@@ -106,8 +113,9 @@ Place the models into the corresponding directories:
 
 For ML models, put the files inside:
 ```bash
-%% add wget code
 cd main_code/classical_machine_learning_models/models
+gdown 'https://drive.google.com/uc?id=1w7xm0u1fWJ74re8pCqICpcr_5i4SGCdi' -O models.zip
+unzip models
 ```
 
 
