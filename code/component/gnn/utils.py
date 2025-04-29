@@ -1,3 +1,44 @@
+# Description:
+# This script contains the end-to-end pipeline for building, training, evaluating, 
+# and visualizing Graph Neural Networks (GNNs) for fraud detection using both 
+# PyTorch Geometric (PyG) and Deep Graph Library (DGL).
+#
+# Key Components:
+#
+# 1. Graph Construction:
+#    - create_graph_pyg: Constructs a HeteroData graph for PyG from transaction,
+#      user, and merchant features.
+#    - create_graph_dgl: Constructs a DGL heterograph with appropriate node and edge types.
+#
+# 2. Graph Inspection:
+#    - print_graph_info_pyg: Prints node and edge stats for a PyG HeteroData object.
+#    - print_graph_info_dgl: Prints structure details of a DGL heterograph.
+#
+# 3. Metrics & Reporting:
+#    - get_metrics: Computes standard classification metrics including AUCPR.
+#    - print_metrics: Displays metrics in a formatted table using PrettyTable.
+#
+# 4. PyG Training Pipeline:
+#    - train_pyg_model_ES: Trains a PyG model using NeighborLoader with early stopping.
+#    - visualize_loss: Visualizes training loss and F1-score across epochs.
+#
+# 5. DGL Training & Evaluation:
+#    - GNN_Trainer: Class to train DGL-based HeteroRGCN models with model saving.
+#    - test_dgl_model: Loads and evaluates a trained DGL model on test data.
+#
+# 6. Graph Visualization:
+#    - visualize_network_graph: Visualizes a subset of the heterogeneous PyG graph
+#      using NetworkX and spring layout.
+#
+# 7. Precision-Recall Curve Plotting:
+#    - generate_aucpr_plot: Plots AUCPR curves for multiple models for visual comparison.
+#
+# Usage:
+# Import this module as part of a GNN-based fraud detection system. Use the
+# respective graph creation and training utilities based on whether you're using 
+# PyG or DGL, and visualize both metrics and structure for insights.
+# ------------------------------------------------------------------------------
+
 from component.packages import *
 from component.gnn.model_dgl import *
 
