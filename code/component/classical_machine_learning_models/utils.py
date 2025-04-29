@@ -1,5 +1,19 @@
+# Import all necessary libraries, utility functions, and packages 
+# from the custom 'component.packages' module. This may include standard
+# libraries (e.g., os, pickle, matplotlib), machine learning packages 
+# (e.g., sklearn, xgboost), and others used throughout the code.
 from component.packages import *
 
+
+
+
+# Evaluates a binary classification model using various standard metrics and 
+# returns both predictions and metric scores.
+# Parameters:
+# - model : A trained classification model that supports `predict_proba`.
+# - X_test : Test features (DataFrame or array).
+# - y_test : True binary labels corresponding to X_test.
+# Use this function after training to evaluate model performance on test data.
 
 def evaluate_model(model, X_test, y_test):
     y_prob = model.predict_proba(X_test)[:, 1]
@@ -16,6 +30,18 @@ def evaluate_model(model, X_test, y_test):
     return y_pred, accuracy, precision, recall, f1, cm, roc_auc, aucpr
 
 
+
+# Description:
+# Trains a set of supervised classification models (Logistic Regression, 
+# Decision Tree, Random Forest, and XGBoost) on provided training data and 
+# saves each trained model to disk in pickle format. Run this function once to persist 
+# all models for reuse in evaluation or deployment.
+
+# Parameters:
+# - X_train : Feature matrix for training (DataFrame or array).
+# - y_train : Target vector for training.
+# - random_state : Random seed for reproducibility (default: 42).
+# - dir_name : Directory to save model files (default: "models").
 
 def train_models(X_train, y_train, random_state=42, dir_name="models"):
     if isinstance(X_train, pd.DataFrame):
@@ -37,6 +63,18 @@ def train_models(X_train, y_train, random_state=42, dir_name="models"):
         model_path = os.path.join(dir_name, f'{name.replace(" ", "_")}.pkl')
         with open(model_path, 'wb') as f:
             pickle.dump(model, f)
+
+
+# Description:
+# Loads trained models from disk, evaluates each on test data, collects 
+# classification metrics, and generates a unified Precision-Recall (PR) curve plot.
+#  Use this function to evaluate and compare saved models on test data.
+#
+# Parameters:
+# - X_test : Test feature matrix.
+# - y_test : True labels for the test set.
+# - dir_name : Directory from which to load saved model files (default: "models").
+
 
 def test_model(X_test, y_test, dir_name="models"):
     if isinstance(X_test, pd.DataFrame):
