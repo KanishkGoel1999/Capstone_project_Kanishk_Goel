@@ -1,3 +1,23 @@
+# Description:
+# This script contains preprocessing functions for multiple datasets used in 
+# credit card fraud detection tasks. It includes:
+#
+# - preprocess_data_1: For Dataset 1 with minimal feature engineering.
+# - preprocess_data_2: For Dataset 2 with extensive engineered features.
+# - preprocess_data_raw: For raw datasets requiring age calculation,
+#   cyclic encoding, and fraud statistics by merchant.
+# - calculate_age: Utility function to compute age from date of birth.
+#
+# Each function transforms input DataFrames into model-ready formats by 
+# performing tasks like timestamp parsing, feature encoding, ID mapping, 
+# and column filtering.
+#
+# Usage:
+# Import and call relevant functions based on dataset type before 
+# training or evaluating machine learning models.
+# ------------------------------------------------------------------------------
+
+
 from component.packages import *
 
 warnings.filterwarnings("ignore")
