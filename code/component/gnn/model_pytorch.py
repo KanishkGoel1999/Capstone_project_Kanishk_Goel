@@ -1,3 +1,24 @@
+# Description:
+# Defines a Heterogeneous Graph Neural Network (HeteroGNN) model using 
+# PyTorch Geometric's HeteroConv module and SAGEConv for message passing.
+#
+# Components:
+# - input_proj : Projects raw input features of each node type to a shared hidden size.
+# - layers     : A stack of HeteroConv layers for heterogeneous message passing.
+# - lin        : Final linear layer to produce classification logits for the target node type.
+#
+# Class:
+# - HeteroGNN:
+#   - __init__: Initializes projection layers, HeteroConv layers, and final classifier.
+#   - forward: Performs message passing across heterogeneous node and edge types.
+#
+# Usage:
+# Instantiate the HeteroGNN class with appropriate input dimensions and pass 
+# a HeteroData object (from PyTorch Geometric) through it to obtain output logits.
+# Suitable for node-level classification tasks on heterogeneous graphs.
+# ------------------------------------------------------------------------------
+
+
 from component.packages import *
 
 class HeteroGNN(torch.nn.Module):
