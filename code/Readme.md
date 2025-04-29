@@ -67,7 +67,7 @@ Download the dataset before training. This script downloads both datasets, pleas
 
 ```bash
 cd ~ 
-%% add data and model code
+gdown 'https://drive.google.com/uc?id=1urh1EIvkGmhErqhCXW_MtKfft_JOwfIA' -O Dataset1.zip
 ```
 
 ---
