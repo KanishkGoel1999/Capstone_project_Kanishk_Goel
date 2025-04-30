@@ -1,3 +1,20 @@
+# Description:
+# Script to evaluate pre-trained classical machine learning models (Logistic 
+# Regression, Decision Tree, Random Forest, XGBoost) on a preprocessed test set 
+# for fraud detection.
+#
+# Key Functionalities:
+# - Loads model and test data paths from a YAML configuration file.
+# - Preprocesses the test data using the appropriate function (Dataset 1 or 2).
+# - Loads saved models from disk.
+# - Evaluates each model and prints performance metrics including Accuracy, 
+#   Precision, Recall, F1-Score, and AUCPR.
+#
+#
+# Usage:
+# - Make sure the models are already trained and saved to the specified directory.
+# - Uncomment the Dataset 2 section to evaluate on Dataset 2 instead.
+# ------------------------------------------------------------------------------
 
 
 from component.preprocess import *
