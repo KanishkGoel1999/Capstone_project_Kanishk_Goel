@@ -1,3 +1,24 @@
+# Description:
+# Script to build, train, and evaluate a Heterogeneous Graph Neural Network (GNN)
+# using PyTorch Geometric for credit card fraud detection. This script loads data,
+# constructs a heterogeneous graph from transaction, user, and merchant nodes, and 
+# trains a model using early stopping.
+#
+# Key Functionalities:
+# - Loads dataset and configuration from YAML.
+# - Applies preprocessing to create graph-ready features.
+# - Constructs a heterogeneous PyG graph using `create_graph_pyg`.
+# - Splits data into training and validation sets using `train_test_split`.
+# - Initializes and trains a `HeteroGNN` model.
+# - Saves the best model based on validation F1 score with early stopping.
+#
+# Usage:
+# - Dataset 1 is enabled by default; uncomment the Dataset 2 section to use it instead.
+# - Configuration must be provided via `config.yaml`.
+# - Model is saved under the name specified in `m_name`.
+# ------------------------------------------------------------------------------
+
+
 from component.packages import *
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
