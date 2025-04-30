@@ -1,3 +1,24 @@
+# Description:
+# Evaluates a trained Heterogeneous Graph Neural Network (HeteroGNN) using 
+# PyTorch Geometric on a fraud detection test dataset. This includes loading the 
+# model and test data, constructing the heterogeneous graph, computing performance 
+# metrics, and visualizing the results.
+#
+# Key Functionalities:
+# - Loads model hyperparameters and file paths from a YAML configuration.
+# - Preprocesses test data and builds a PyG HeteroData graph.
+# - Loads a trained HeteroGNN model and performs inference.
+# - Computes classification metrics: Accuracy, Precision, Recall, F1, AUCPR.
+# - Saves predictions to CSV and generates AUCPR plot.
+# - Visualizes the heterogeneous transaction graph using NetworkX.
+#
+# Usage:
+# - Dataset 1 is enabled by default; uncomment the Dataset 2 block to switch.
+# - Ensure the trained model file exists at the specified path in the config.
+# - AUCPR curve and predictions are saved in the working directory.
+# ------------------------------------------------------------------------------
+
+
 from component.packages import *
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
