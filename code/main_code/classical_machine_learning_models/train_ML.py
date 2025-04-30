@@ -9,14 +9,9 @@
 # - Trains and saves multiple models (Logistic Regression, Decision Tree, 
 #   Random Forest, XGBoost) to a specified directory.
 #
-# Components:
-# - load_config(): Loads config from a YAML file.
-# - save_model(): Saves a trained model using pickle.
-# - main(): Orchestrates data loading, preprocessing, training, and saving.
-#
 # Usage:
-# Run the script from the command line or as a module:
-# > python train_classical_models.py
+# - Make sure config.yaml is present and paths inside are correct.
+# - Uncomment the Dataset 2 section if using the second dataset.
 # ------------------------------------------------------------------------------
 
 import sys
