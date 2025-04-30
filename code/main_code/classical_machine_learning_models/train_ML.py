@@ -1,3 +1,24 @@
+# Description:
+# To train classical machine learning models on fraud detection datasets (Dataset 1 or Dataset 2) 
+# using configuration parameters.
+#
+# Key Functionalities:
+# - Loads model and data paths from a YAML configuration file.
+# - Applies the appropriate preprocessing function based on the dataset version.
+# - Splits features and target variable.
+# - Trains and saves multiple models (Logistic Regression, Decision Tree, 
+#   Random Forest, XGBoost) to a specified directory.
+#
+# Components:
+# - load_config(): Loads config from a YAML file.
+# - save_model(): Saves a trained model using pickle.
+# - main(): Orchestrates data loading, preprocessing, training, and saving.
+#
+# Usage:
+# Run the script from the command line or as a module:
+# > python train_classical_models.py
+# ------------------------------------------------------------------------------
+
 import sys
 
 import yaml
